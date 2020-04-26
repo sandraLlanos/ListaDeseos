@@ -10,13 +10,12 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  listas: Lista[] = []
+  listas: Lista[] = [];
   constructor(private deseosService: DeseosService,
     private router: Router,
     private alertCtrl: AlertController) { }
 
  async agregarlista() {
-    // this.router.navigateByUrl('tabs/tab1/agregar');
     const alert = await this.alertCtrl.create({
       header:'Nueva Lista',
       inputs:[
@@ -40,7 +39,9 @@ export class Tab1Page {
             if( data.titulo.length === 0 ){
               return;
             }
-            this.deseosService.crearLista(data.titulo);
+           const listaId = this.deseosService.crearLista(data.titulo);
+            this.router.navigateByUrl( `tabs/tab1/agregar/${listaId}`);
+
           }
         }
       ]
