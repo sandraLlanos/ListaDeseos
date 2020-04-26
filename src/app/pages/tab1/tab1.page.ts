@@ -11,6 +11,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab1Page {
   listas: Lista[] = [];
+  
   constructor(private deseosService: DeseosService,
     private router: Router,
     private alertCtrl: AlertController) { }
@@ -47,6 +48,10 @@ export class Tab1Page {
       ]
     });
     alert.present();
+  }
+
+  listaSeleccionada(lista: Lista){     
+    this.router.navigateByUrl( `tabs/tab1/agregar/${lista.id}`);    
   }
 
 }

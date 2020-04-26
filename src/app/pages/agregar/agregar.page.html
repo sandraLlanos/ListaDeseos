@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar color="dark">
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="start">
       <ion-back-button color="tertiary" defaultHref="/"></ion-back-button>
     </ion-buttons>
 
@@ -22,7 +22,7 @@
   <ion-list>
 
     <ion-list-header color="dark">
-      <ion-label>Tareas por hacer</ion-label>
+      <ion-label *ngIf="lista.items.length > 0">Tareas por hacer</ion-label>
     </ion-list-header>
     <ion-item-sliding *ngFor="let item of lista.items; let i = index" class="animated fadeInDown">
       <ion-item color="dark">
