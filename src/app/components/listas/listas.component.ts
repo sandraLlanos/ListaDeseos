@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeseosService } from '../../services/deseos.service'
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 import { Lista } from 'src/app/models/lista.model';
 
 @Component({
@@ -22,6 +21,9 @@ export class ListasComponent {
     }else{
       this.router.navigateByUrl(`tabs/tab1/agregar/${lista.id}`);      
     }
+  }
+  borrar(lista:Lista){
+    this.deseosService.borrarLista(lista);
   }
 
 }

@@ -23,9 +23,12 @@ export class DeseosService {
 
   obtenerLista(id: string | number) {
     id = Number(id);
-    return this.listas.find( listaData => listaData.id === id );
+    return this.listas.find(listaData => listaData.id === id);
   }
-
+  borrarLista(lista: Lista) {
+    this.listas = this.listas.filter(listaConData => listaConData.id !== lista.id);
+    this.guardarStorage();
+  }
   guardarStorage() {
     localStorage.setItem('data', JSON.stringify(this.listas));
   }
@@ -36,5 +39,6 @@ export class DeseosService {
       this.listas = [];
     }
   }
+
 
 }
