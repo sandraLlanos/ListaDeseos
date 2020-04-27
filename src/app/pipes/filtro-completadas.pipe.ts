@@ -9,7 +9,7 @@ export class FiltroCompletadasPipe implements PipeTransform {
 
   transform(listas: Lista[], completado: boolean = true): Lista[] {
     
-  return listas.filter( lista =>lista.terminada === completado);
+  return listas.filter( lista => lista.terminada === completado);
   }
 
 }

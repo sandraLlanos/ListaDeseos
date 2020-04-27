@@ -31,12 +31,10 @@ export class Tab1Page {
           text: 'Cancel',
           role: 'cancel',
           handler: () => {
-            console.log('Cancelar');
           }
         }, {
           text: 'Crear',
           handler: ( data ) => {
-            console.log(data);
             if( data.titulo.length === 0 ){
               return;
             }
